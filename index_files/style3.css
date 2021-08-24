@@ -1,0 +1,23 @@
+/*메인모션*/
+
+body .scroll-trigger_move-up-fade-in .container:first-of-type {
+  opacity: 0;
+  transform: translateY(50px);
+}
+body .scroll-trigger_move-up-fade-in.animation_move-up-fade-in .container:first-of-type {
+  opacity: 1;
+  transform: translateY(0);
+/*  transition: all .89s ease-inease-in-out;*/transition: transform 1500ms ease-in;
+
+}
+
+/*
+#motivations img {position: absolute;
+	top: 500px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}*/
+
+
+/*웹사이트 큰거에 글자 올라오는 것 샘플 딴 것*/

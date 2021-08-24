@@ -1,0 +1,75 @@
+/*
+const key = document.querySelector('.key')
+const keyText = key.innerText
+const copy = document.querySelector('.copy')
+const copied = document.querySelector('.copied')
+
+
+// Show "copy" icon on hover with helper class.
+key.addEventListener('mouseover', () => copy.classList.remove('hide'))
+key.addEventListener('mouseleave', () => copy.classList.add('hide'))
+
+
+// Copy text when clicking on it.
+key.addEventListener('click', () => {
+	// We change "copy" icon for "copied" message.
+	copy.classList.add('hide')
+	copied.classList.remove('hide')
+	
+	// We turn simple text into an input value temporarily, so we can use methods .select() and .execCommand() which are compatible with inputs and textareas.
+	let helperInput = document.createElement('input')
+	document.body.appendChild(helperInput)
+	helperInput.value = keyText
+	helperInput.select()
+	document.execCommand('copy')
+	document.body.removeChild(helperInput)
+	
+	// We remove the "copied" message after 2 seconds.
+	setTimeout( () => {
+		copied.classList.add('hide')
+	}, 2000)
+	
+})
+*/
+
+var bankArr = [];
+bankArr.length = $('.key').length;
+
+for(var inx=0; inx<$('.key').length; inx++)
+{
+	var targetKey = $('.key')[inx];
+	bankArr[inx] = targetKey.innerText;
+
+	targetKey.addEventListener('mouseover', (e) => { var copy = $(e.srcElement).parent().find('.copy'); copy.removeClass('hide'); });
+	targetKey.addEventListener('mouseleave', (e) => { var copy = $(e.srcElement).parent().find('.copy'); copy.addClass('hide'); });
+
+	targetKey.addEventListener('click', (e) => {
+		var copy = $(e.srcElement).parent().find('.copy');
+		var copied = $(e.srcElement).parent().find('.copied');
+
+		copy.addClass('hide');
+		copied.removeClass('hide');
+		var copyIdx = 0;
+		for(var jnx=0; jnx<$('.key').length; jnx++)
+		{
+			if($('.copy')[jnx] == copy[0])
+			{
+				copyIdx = jnx;
+				break;
+			}
+		}
+		
+		let helperInput = document.createElement('input');
+		document.body.appendChild(helperInput);
+		helperInput.value = bankArr[jnx];
+		helperInput.select();
+		document.execCommand('copy');
+		document.body.removeChild(helperInput);
+		
+		setTimeout( () => {
+			var copieds = $('.copied');
+			for(var jnx=0; jnx<copieds.length; jnx++)
+				$(copieds[jnx]).addClass('hide');
+		}, 2000);
+	})
+}

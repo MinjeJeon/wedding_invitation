@@ -1,0 +1,61 @@
+// jquery ver.
+
+// $(function() {
+//   $(window).scroll(function() {
+//     $('.fadein').each(function() {
+//       let
+//         elemPos = $(this).offset().top,
+//         scroll = $(window).scrollTop(),
+//         windowHeight = $(window).height();
+//       if (scroll > elemPos - windowHeight + 100) {
+//         $(this).addClass('scrollin');
+//       }
+//     })
+//   });
+//   $(window).scroll();
+// });
+
+// javascript ver.
+
+//전체모션
+
+let fadeinItem = document.getElementsByClassName('fadein');
+
+function scrollFadeIn() {
+    for (let i = 0; i < fadeinItem.length; i++) {
+        let
+            rect = fadeinItem[i].getBoundingClientRect(),
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop,
+            elemPos = rect.top + scrollTop,
+            windowHeight = window.innerHeight;
+
+        if (scrollTop > elemPos - windowHeight + 100) {
+            fadeinItem[i].classList.add('scrollin');
+        }
+    }
+};
+
+window.addEventListener('load', scrollFadeIn);
+window.addEventListener('scroll', scrollFadeIn);
+
+console.log(1 || "aaaaaa");
+
+
+
+
+
+//bgm
+   var bgm = document.getElementById('bgm');
+        var musicSrc = $(".m_off iframe").attr('src'); 
+        $(".m_off").click(function(e){
+            e.preventDefault();
+            if(bgm.paused){
+              bgm.play();
+              $(".m_off img").attr('src','img/music_on.png');
+            }else{
+              bgm.pause();
+              $(".m_off img").attr('src','img/music_off.png');
+            }
+        });
+
+

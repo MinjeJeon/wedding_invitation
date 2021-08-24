@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+body {
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+    letter-spacing: -4px;
+    font-size: 0;
+    line-height: 0;
+
+    background-color: rgba(255, 254, 245, 0);
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 0;
+    vertical-align: top
+}
+
+
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+    list-style: none
+}
+
+#wrap {
+    width: 100%;
+    max-width: 1080px;
+    /**/
+    margin: 0 auto
+}
+
+.content {
+    width: 100%
+}
+
+
+#wrap .fadein {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center
+}
+
+#wrap .fadein .sd {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center
+}
+
+
+
+#footer {
+    padding-top: 20px
+}
+
+.contact {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center
+}
+
+.contact li {
+    width: 100%;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1
+}
+
+.blind {
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 99em
+}
+
+#motivations .col {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#motivations img {
+    width: 100%;
+    max-width: 1080px;
+}
+
+
+#wrap .tz-gallery {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#wrap .row {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#wrap .row .col-sm-6 {
+    float: left;
+    margin-left: 7.7%;
+    width: 38%;
+    margin-top: 15px;
+}
